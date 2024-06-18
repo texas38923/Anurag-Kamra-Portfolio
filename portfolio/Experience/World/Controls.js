@@ -19,6 +19,10 @@ export default class Room {
       }
     });
 
+    this.circleFirst = this.experience.world.floor.circleFirst;
+    this.circleSecond = this.experience.world.floor.circleSecond;
+    this.circleThird = this.experience.world.floor.circleThird;
+
     GSAP.registerPlugin(ScrollTrigger);
 
     this.setSmoothScroll();
@@ -232,7 +236,7 @@ export default class Room {
 
       // all
       all: () => {
-        //
+        //progress bar:
         this.sections = document.querySelectorAll('.section');
         this.sections.forEach((section) => {
           this.progressWrapper = section.querySelector('.progress-wrapper');
@@ -289,6 +293,64 @@ export default class Room {
               pinSpacing: false,
             },
           });
+        });
+
+        //All animations:
+        //First Section-------------------------------------------
+        this.firstMoveTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: '.first-move',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 0.64,
+            invalidateOnRefresh: true,
+          },
+        }).to(this.circleFirst.scale, {
+          x: 3,
+          y: 3,
+          z: 3,
+        });
+
+        //Second Section-------------------------------------------
+        this.secondMoveTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: '.second-move',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 0.64,
+            invalidateOnRefresh: true,
+          },
+        })
+          .to(
+            this.circleSecond.scale,
+            {
+              x: 3,
+              y: 3,
+              z: 3,
+            },
+            'same'
+          )
+          .to(
+            this.room.position,
+            {
+              y: 0.7,
+            },
+            'same'
+          );
+
+        //Third Section-------------------------------------------
+        this.thirdMoveTimeline = new GSAP.timeline({
+          scrollTrigger: {
+            trigger: '.third-move',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 0.64,
+            invalidateOnRefresh: true,
+          },
+        }).to(this.circleThird.scale, {
+          x: 3,
+          y: 3,
+          z: 3,
         });
 
         //mini platform animations:
