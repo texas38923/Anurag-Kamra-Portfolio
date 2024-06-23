@@ -2,13 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <!-- <link rel="manifest" href="/site.webmanifest" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Portfolio | Anurag Kamra</title>
   </head>
   <body class="light-theme">
     <div class="experience">
       <canvas class="experience-canvas"></canvas>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-wrapper">
+        <div class="loading">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
     </div>
 
     <div class="page" asscroll-container>
@@ -47,19 +62,28 @@
       <div class="page-wrapper" asscroll>
         <section class="hero">
           <div class="hero-wrapper">
+            <div class="intro-text">Welcome to my portfolio!</div>
+            <div class="arrow-svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                <path
+                  fill="currentColor"
+                  d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z"
+                />
+              </svg>
+            </div>
             <div class="hero-main">
               <h1 class="hero-main-title">Anurag Kamra</h1>
               <p class="hero-main-description">
                 Computer Engineer | Programming | Web Development
               </p>
-              <p class="hero-main-description">
+              <p class="hero-main-description second-desc">
                 3D Artist | Video Editing | UI/UX Designing
               </p>
             </div>
 
             <div class="hero-second">
-              <p class="hero-second-subheading">Anurag Kamra's</p>
-              <p class="hero-second-subheading">Portfolio</p>
+              <p class="hero-second-subheading first-sub">Anurag Kamra's</p>
+              <p class="hero-second-subheading second-sub">Portfolio</p>
             </div>
           </div>
         </section>
@@ -82,26 +106,37 @@
           </div>
 
           <div class="section-detail-wrapper">
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading">Computer Engineer</h3>
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              By education, I am a Computer Engineer, graduating from Delhi
+              Technological University, India, in 2025.
             </p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading">Programming</h3>
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              I like solving algorithmic puzzles and DSA problems, playing
+              chess, as well as competitive programming.
             </p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading">Web Development</h3>
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              I am currently mastering the MERN Stack, T3 Stack, as well as
+              WebGL animations along with ThreeJS...
+            </p>
+            <h3 class="section-heading">3D Artist</h3>
+            <p class="section-text">
+              I started Blender when i was in high school, and have made a lot
+              of models and projects in that software; Some of these can be
+              found on my Instagram.
+            </p>
+            <h3 class="section-heading">Video Editing</h3>
+            <p class="section-text">
+              I use Adobe After Effects for video editing, most of my editing
+              projects are montages and travel edits, which can be found on my
+              YouTube Channel and Instagram Page respectively..
+            </p>
+            <h3 class="section-heading">UI/UX Designing</h3>
+            <p class="section-text">
+              Utilizing Figma, I've made more than 10 visually appealing user
+              interfaces in different app domains.
             </p>
           </div>
         </section>
@@ -115,7 +150,7 @@
 
           <div class="section-intro-wrapper blue-text blue-border">
             <h1 class="section-title blue-text blue-border">
-              <span class="section-title-text blue-text">My Work</span>
+              <span class="section-title-text blue-text">Some Projects</span>
               <div class="section-title-secoration styleOne blue-border"></div>
               <div class="section-title-secoration styleTwo blue-border"></div>
               <div
@@ -126,26 +161,39 @@
           </div>
 
           <div class="section-detail-wrapper">
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading">Automated Rock Paper Scissors</h3>
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              Used vanilla Javascript in order to create an automated rock paper
+              scissors player, along with the functionality of maintaining and
+              storing the score, as well as enabling a user to play with the
+              computer.
             </p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading">Gen(QR)ator</h3>
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              Users can enter a text or a link, and can create a QR Code for it
+              in different sizes, can be downloaded in png or pdf format.
             </p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading">iPhone Landing Page</h3>
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              Used Threejs and GSAP to replicate the iPhone 12 landing page,
+              incorporating user interactions and phone exploration features.
+            </p>
+            <h3 class="section-heading">MERNergetic Chatter</h3>
+            <p class="section-text">
+              Integrated OpenAI API along with user authorization and
+              authentication.
+            </p>
+            <h3 class="section-heading">Ticketing App</h3>
+            <p class="section-text">
+              Used TypeScript along with NextJs to create a ticketing app where
+              various issues and bugs related to a software can be reported and
+              marked as resolved.
+            </p>
+            <h3 class="section-heading">Memories</h3>
+            <p class="section-text">
+              Used the MERN Stack to create a social media application, where
+              users can securely connect and share about their travels and
+              trips.
             </p>
           </div>
         </section>
@@ -170,26 +218,28 @@
           </div>
 
           <div class="section-detail-wrapper">
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <!-- <h3 class="section-heading">LinkedIn</h3> -->
+            <a
+              href="https://www.linkedin.com/in/anurag-kamra-56474922a/"
+              target="_blank"
+              >LinkedIn</a
+            >
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              Feel free to connect with me here, or drop me a message if you
+              want to talk.
             </p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <!-- <h3 class="section-heading">Instagram</h3> -->
+            <a href="https://www.instagram.com/teq.arine/" target="_blank"
+              >Instagram</a
+            >
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              Most of my blender models and animations can be found here.
             </p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <!-- <h3 class="section-heading">Github</h3> -->
+            <a href="https://github.com/texas38923" target="_blank">GitHub</a>
             <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptate, impedit natus a consequuntur laborum velit adipisci
-              corrupti? Recusandae totam voluptas vero vitae a eligendi
-              voluptatibus culpa. Consectetur repellat perferendis voluptatibus.
+              You can head over to my GitHub if you want to look at my
+              development projects, Most of them are uploaded here.
             </p>
           </div>
         </section>

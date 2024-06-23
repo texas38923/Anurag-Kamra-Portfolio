@@ -2,7 +2,6 @@ import Experience from '../Experience.js';
 import * as THREE from 'three';
 import GSAP from 'gsap';
 import GUI from 'lil-gui';
-import { color } from 'three/examples/jsm/nodes/Nodes.js';
 
 export default class Environment {
   constructor() {

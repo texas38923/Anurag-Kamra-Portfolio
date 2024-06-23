@@ -25,7 +25,15 @@ export default class Room {
 
     GSAP.registerPlugin(ScrollTrigger);
 
-    this.setSmoothScroll();
+    document.querySelector('.page').style.overflow = 'visible';
+
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      this.setSmoothScroll();
+    }
     this.setScrollTrigger();
   }
 
@@ -86,6 +94,9 @@ export default class Room {
         this.rectLight.width = 0.5;
         this.rectLight.height = 0.7;
 
+        this.camera.orthographicCamera.position.set(0, 6.5, 10);
+        this.room.position.set(0, 0, 0);
+
         //First Section-------------------------------------------
         this.firstMoveTimeline = new GSAP.timeline({
           scrollTrigger: {
@@ -97,11 +108,15 @@ export default class Room {
           },
         });
 
-        this.firstMoveTimeline.to(this.room.position, {
-          x: () => {
-            return this.sizes.width * 0.0014;
-          },
-        });
+        this.firstMoveTimeline.fromTo(
+          this.room.position,
+          { x: 0, y: 0, z: 0 },
+          {
+            x: () => {
+              return this.sizes.width * 0.0014;
+            },
+          }
+        );
 
         //Second Section-------------------------------------------
         this.secondMoveTimeline = new GSAP.timeline({
@@ -140,7 +155,7 @@ export default class Room {
           this.rectLight,
           {
             width: 0.5 * 4,
-            height: 0.5 * 4,
+            height: 0.7 * 4,
           },
           'same'
         );
@@ -158,7 +173,7 @@ export default class Room {
 
         this.thirdMoveTimeline.to(this.camera.orthographicCamera.position, {
           y: 1.5,
-          y: -4.1,
+          x: -2.4,
         });
       },
 
@@ -169,6 +184,7 @@ export default class Room {
         this.room.position.set(0, 0, 0);
         this.rectLight.width = 0.3;
         this.rectLight.height = 0.4;
+        this.camera.orthographicCamera.position.set(0, 6.5, 10);
 
         //First Section-------------------------------------------
         this.firstMoveTimeline = new GSAP.timeline({
@@ -177,7 +193,7 @@ export default class Room {
             start: 'top top',
             end: 'bottom bottom',
             scrub: 0.64,
-            invalidateOnRefresh: true,
+            // invalidateOnRefresh: true,
           },
         }).to(this.room.scale, {
           x: 0.1,
@@ -297,13 +313,13 @@ export default class Room {
 
         //All animations:
         //First Section-------------------------------------------
-        this.firstMoveTimeline = new GSAP.timeline({
+        this.firstCircle = new GSAP.timeline({
           scrollTrigger: {
             trigger: '.first-move',
             start: 'top top',
             end: 'bottom bottom',
             scrub: 0.64,
-            invalidateOnRefresh: true,
+            // invalidateOnRefresh: true,
           },
         }).to(this.circleFirst.scale, {
           x: 3,
@@ -312,13 +328,13 @@ export default class Room {
         });
 
         //Second Section-------------------------------------------
-        this.secondMoveTimeline = new GSAP.timeline({
+        this.secondCircle = new GSAP.timeline({
           scrollTrigger: {
             trigger: '.second-move',
             start: 'top top',
             end: 'bottom bottom',
             scrub: 0.64,
-            invalidateOnRefresh: true,
+            // invalidateOnRefresh: true,
           },
         })
           .to(
@@ -339,7 +355,7 @@ export default class Room {
           );
 
         //Third Section-------------------------------------------
-        this.thirdMoveTimeline = new GSAP.timeline({
+        this.thirdCircle = new GSAP.timeline({
           scrollTrigger: {
             trigger: '.third-move',
             start: 'top top',
@@ -358,9 +374,6 @@ export default class Room {
           scrollTrigger: {
             trigger: '.third-move',
             start: 'center center',
-            end: 'bottom bottom',
-            scrub: 0.64,
-            invalidateOnRefresh: true,
           },
         });
 
@@ -449,12 +462,12 @@ export default class Room {
         this.secondPartTimeline.add(this.first);
         this.secondPartTimeline.add(this.second);
         this.secondPartTimeline.add(this.third);
-        this.secondPartTimeline.add(this.fourth);
-        this.secondPartTimeline.add(this.fifth);
-        this.secondPartTimeline.add(this.sixth);
-        this.secondPartTimeline.add(this.seventh);
+        this.secondPartTimeline.add(this.fourth, '-=0.2');
+        this.secondPartTimeline.add(this.fifth, '-=0.2');
+        this.secondPartTimeline.add(this.sixth, '-=0.2');
+        this.secondPartTimeline.add(this.seventh, '-=0.2');
         this.secondPartTimeline.add(this.eighth);
-        this.secondPartTimeline.add(this.ninth);
+        this.secondPartTimeline.add(this.ninth, '-=0.1');
       },
     });
   }
