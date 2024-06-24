@@ -59,6 +59,10 @@ a {
   background: var(--color-text);
 }
 
+a:hover {
+  background-color: #555;
+}
+
 /*Experience----------------------------------------*/
 .experience {
   position: fixed;
@@ -140,6 +144,27 @@ a {
 
 .page-wrapper {
   position: relative;
+}
+
+/*Go To Top Button*/
+.go-to-top-btn {
+  scale: 0;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 40px; /* Place the button at the bottom of the page */
+  right: 50px; /* Place the button 30px from the right */
+  z-index: 99999999; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: var(--color-text); /* Set a background color */
+  color: var(--color-background); /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 12px 25px; /* Some padding */
+  font-size: 18px; /* Increase font size */
+  border-radius: 5px 20px 5px;
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
 }
 
 /*Preloader------------------------------------------*/

@@ -26,6 +26,9 @@ export default class Room {
     GSAP.registerPlugin(ScrollTrigger);
 
     document.querySelector('.page').style.overflow = 'visible';
+    document.querySelector('.go-to-top-btn').style.scale = 1;
+    document.querySelector('.go-to-top-btn').style.transition =
+      'scale 0.2s ease-out';
 
     if (
       !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -374,6 +377,9 @@ export default class Room {
           scrollTrigger: {
             trigger: '.third-move',
             start: 'center center',
+            end: 'bottom bottom',
+            scrub: 0.64,
+            invalidateOnRefresh: true,
           },
         });
 

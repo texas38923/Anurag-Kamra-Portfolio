@@ -9,7 +9,16 @@
     <!-- <link rel="manifest" href="/site.webmanifest" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Anurag Kamra</title>
+
+    <script>
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
   </head>
+
   <body class="light-theme">
     <div class="experience">
       <canvas class="experience-canvas"></canvas>
@@ -58,6 +67,10 @@
           </svg>
         </div>
       </div>
+
+      <button class="go-to-top-btn" id="myBtn" onClick="topFunction()">
+        Back to top
+      </button>
 
       <div class="page-wrapper" asscroll>
         <section class="hero">
