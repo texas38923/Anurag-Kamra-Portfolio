@@ -509,3 +509,12 @@ a:hover {
     margin-right: 25px;
   }
 }
+
+@media (max-height: 700px) {
+  .hero-main {
+    bottom: 100px;
+  }
+  .hero-second {
+    top: 120px;
+  }
+}
