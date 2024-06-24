@@ -146,7 +146,7 @@ a:hover {
   position: relative;
 }
 
-/*Go To Top Button*/
+/*Go To Top Button--------------------------------------------------------*/
 .go-to-top-btn {
   scale: 0;
   position: fixed; /* Fixed/sticky position */
@@ -494,6 +494,10 @@ a:hover {
   }
   .hero-second-subheading {
     font-size: 18px;
+  }
+  .go-to-top-btn {
+    bottom: 15px;
+    right: 15px;
   }
 }
 
